@@ -30,15 +30,36 @@ class _PlaceWebViewState extends State<PlaceWebView> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                MyListTitle(leading: "名稱：", title: widget.item.name),
-                MyListTitle(leading: '簡述：', title: widget.item.summary),
-                MyListTitle(leading: '地址：', title: widget.item.address),
-                MyListTitle(leading: '電話：', title: widget.item.phoneNumber ?? ""),
-                MyListTitle(
-                    leading: '大眾運輸：', title: widget.item.publicTransportation ?? ""),
-                MyListTitle(leading: '行車資訊：', title: widget.item.drivingInfo ?? ""),
-                MyListTitle(leading: '門票資訊：', title: widget.item.ticketInfo ?? ""),
-                MyListTitle(leading: '旅遊叮嚀：', title: widget.item.travelInfo ?? ""),
+                widget.item.name!=null?ListTile(
+                  leading: Text( "名稱："),
+                  title: Text( widget.item.name),
+                ):Container(),
+                widget.item.phoneNumber!=''?ListTile(
+                  leading: Text( '電話號碼：'),
+                  title: Text( widget.item.phoneNumber??""),
+                ):Container(),
+                widget.item.address!=''?ListTile(
+                  leading: Text( '地址'),
+                  title: Text( widget.item.address??""),
+                ):Container(),
+                widget.item.drivingInfo!=''?ListTile(
+                  leading: Text('行車資訊：'),
+                  title: Text( widget.item.drivingInfo??""),
+                ):Container(),
+                widget.item.travelInfo!=''?ListTile(
+                  leading: Text('旅遊資訊：'),
+                  title: Text( widget.item.travelInfo??""),
+                ):Container(),
+                // MyListTitle(leading: "名稱：", title: widget.item.name),
+                // MyListTitle(leading: '簡述：', title: widget.item.summary),
+                // MyListTitle(leading: '地址：', title: widget.item.address),
+                // MyListTitle(leading: '電話：', title: widget.item.phoneNumber ?? ""),
+                // MyListTitle(
+                //     leading: '大眾運輸：', title: widget.item.publicTransportation ?? ""),
+                // MyListTitle(leading: '行車資訊：', title: widget.item.drivingInfo ?? ""),
+                // MyListTitle(leading: '門票資訊：', title: widget.item.ticketInfo ?? ""),
+                // MyListTitle(leading: '旅遊叮嚀：', title: widget.item.travelInfo ?? ""),
+
                 makeHtml(),
               ],
             ),
@@ -81,28 +102,27 @@ class _PlaceWebViewState extends State<PlaceWebView> {
   }
 }
 
-class MyListTitle extends StatelessWidget {
-  final String leading;
-  final String title;
-
-  MyListTitle({this.leading, this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    if (leading != null ||
-        title != null ||
-        title != "" ||
-        leading != "" ||
-        leading.toString() != "null" ||
-        title.toString() != "null") {
-      print("???");
-      return ListTile(
-        leading: Text(leading),
-        title: Text(title),
-      );
-    } else {
-
-      return Container();
-    }
-  }
-}
+// class MyListTitle extends StatelessWidget {
+//   final String leading;
+//   final String title;
+//
+//   MyListTitle({this.leading, this.title});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     if (leading != null ||
+//         title != null ||
+//         title != "" ||
+//         leading != "" ||
+//         leading.toString() != "null" ||
+//         title.toString() != "null") {
+//       print("???");
+//       return ListTile(
+//         leading: Text(leading),
+//         title: Text(title),
+//       );
+//     } else {
+//       return Container();
+//     }
+//   }
+// }

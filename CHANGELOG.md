@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1] - 2021-03-13
+## [0.0.1] - 2021-04-29
 ### Added
 - Taichung City place
 
 ### Deprecated
 - The Bug in WebView Page
 
+## [0.0.2] - 2021-05-01
+### Added
+- Bug in WebView
