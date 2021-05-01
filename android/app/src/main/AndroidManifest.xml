@@ -5,6 +5,8 @@
    <application
         android:label="taichung_place"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCDwwRYBumgpZ1IAUX73huZ8_hyIufYU68"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

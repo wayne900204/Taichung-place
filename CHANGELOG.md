@@ -18,5 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bug in WebView
 
 ## [0.0.3] - 2021-05-01
+### Added 
+- GoogleMap in WebView Page
 ### Fixed
 - The Bug in WebView Page
