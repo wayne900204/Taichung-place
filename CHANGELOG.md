@@ -16,3 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.2] - 2021-05-01
 ### Added
 - Bug in WebView
+
+## [0.0.3] - 2021-05-01
+### Fixed
+- The Bug in WebView Page

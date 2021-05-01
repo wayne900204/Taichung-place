@@ -34,32 +34,22 @@ class _PlaceWebViewState extends State<PlaceWebView> {
                   leading: Text( "名稱："),
                   title: Text( widget.item.name),
                 ):Container(),
-                widget.item.phoneNumber!=''?ListTile(
+                widget.item.phoneNumber==null||widget.item.phoneNumber==""?Container():ListTile(
                   leading: Text( '電話號碼：'),
                   title: Text( widget.item.phoneNumber??""),
-                ):Container(),
-                widget.item.address!=''?ListTile(
+                ),
+                widget.item.address==''||widget.item.address==null?Container():ListTile(
                   leading: Text( '地址'),
                   title: Text( widget.item.address??""),
-                ):Container(),
-                widget.item.drivingInfo!=''?ListTile(
+                ),
+                widget.item.drivingInfo==null||widget.item.drivingInfo==""?Container():ListTile(
                   leading: Text('行車資訊：'),
                   title: Text( widget.item.drivingInfo??""),
-                ):Container(),
-                widget.item.travelInfo!=''?ListTile(
+                ),
+                widget.item.travelInfo==''||widget.item.drivingInfo==null?Container():ListTile(
                   leading: Text('旅遊資訊：'),
                   title: Text( widget.item.travelInfo??""),
-                ):Container(),
-                // MyListTitle(leading: "名稱：", title: widget.item.name),
-                // MyListTitle(leading: '簡述：', title: widget.item.summary),
-                // MyListTitle(leading: '地址：', title: widget.item.address),
-                // MyListTitle(leading: '電話：', title: widget.item.phoneNumber ?? ""),
-                // MyListTitle(
-                //     leading: '大眾運輸：', title: widget.item.publicTransportation ?? ""),
-                // MyListTitle(leading: '行車資訊：', title: widget.item.drivingInfo ?? ""),
-                // MyListTitle(leading: '門票資訊：', title: widget.item.ticketInfo ?? ""),
-                // MyListTitle(leading: '旅遊叮嚀：', title: widget.item.travelInfo ?? ""),
-
+                ),
                 makeHtml(),
               ],
             ),
@@ -77,15 +67,15 @@ class _PlaceWebViewState extends State<PlaceWebView> {
           return FlutterLogo(size: 36);
         },
         networkSourceMatcher(domains: ["https://datacenter.taichung.gov.tw"]):
-            networkImageRender(
+        networkImageRender(
           headers: {"Custom-Header": "some-value"},
           altWidget: (alt) => Text(alt),
           loadingWidget: () => Text("Loading..."),
         ),
         // On relative paths starting with /wiki, prefix with a base url
-        (attr, _) => attr["src"] != null && attr["src"].startsWith("/wiki"):
-            networkImageRender(
-                mapUrl: (url) => "https://datacenter.taichung.gov.tw" + url),
+            (attr, _) => attr["src"] != null && attr["src"].startsWith("/wiki"):
+        networkImageRender(
+            mapUrl: (url) => "https://datacenter.taichung.gov.tw" + url),
         // // Custom placeholder image for broken links
         // networkSourceMatcher(): networkImageRender(altWidget: (_) => FlutterLogo()),
       },
@@ -102,27 +92,3 @@ class _PlaceWebViewState extends State<PlaceWebView> {
   }
 }
 
-// class MyListTitle extends StatelessWidget {
-//   final String leading;
-//   final String title;
-//
-//   MyListTitle({this.leading, this.title});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     if (leading != null ||
-//         title != null ||
-//         title != "" ||
-//         leading != "" ||
-//         leading.toString() != "null" ||
-//         title.toString() != "null") {
-//       print("???");
-//       return ListTile(
-//         leading: Text(leading),
-//         title: Text(title),
-//       );
-//     } else {
-//       return Container();
-//     }
-//   }
-// }
