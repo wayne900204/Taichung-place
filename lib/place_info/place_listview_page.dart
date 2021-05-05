@@ -39,6 +39,7 @@ class _PlaceListPageState extends State<PlaceListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('台中景點',style: TextStyle(color: Colors.white),),
         centerTitle: true,
         iconTheme: IconThemeData(
