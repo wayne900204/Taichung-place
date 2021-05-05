@@ -25,7 +25,7 @@ class _PlaceWebViewState extends State<PlaceWebView> {
         appBar: AppBar(
             backgroundColor: Colors.cyan[400],
             title: Text(
-              'AI 植物辨識',
+              widget.item.name,
               style: TextStyle(color: Colors.white),
             ),
             centerTitle: true,
@@ -42,12 +42,6 @@ class _PlaceWebViewState extends State<PlaceWebView> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                widget.item.name != null
-                    ? ListTile(
-                        leading: Text("名稱："),
-                        title: Text(widget.item.name),
-                      )
-                    : Container(),
                 widget.item.phoneNumber == null || widget.item.phoneNumber == ""
                     ? Container()
                     : ListTile(

@@ -22,3 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GoogleMap in WebView Page
 ### Fixed
 - The Bug in WebView Page
+
+## [0.0.4] - 2021-05-05
+### Security
+- Removed the google map API KEY from github  
